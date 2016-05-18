@@ -7,12 +7,16 @@ class Pincel
   int alto = 340;
 
   /***Posiciones de pinceles en sprite**/
-  int xp[] = {  0, 0, 0};
-  int yp[] = {  0, 340, 680};
+  int xp[] = {  
+    0, 0, 0
+  };
+  int yp[] = {  
+    0, 340, 680
+  };
   int cantidad =yp.length;
   /*****/
+  String estado;
   
-
 
   Pincel()
   {
@@ -32,14 +36,29 @@ class Pincel
     pincel.filter(INVERT);
     mascara.filter(INVERT);
     pincel.mask(mascara);
-    
+    estado = "espera";
+  }
+  //estado para ejecutar pinceles de acuerdo a la presencia de sonido
+  void actualizar( boolean estimulo ) {
+    if ( estado.equals( "espera" )) {
+      if ( estimulo ) {
+        estado = "traza";
+        mostrar();
+      }
+    } else if ( estado.equals( "traza" )) {
+      if ( !estimulo ) {
+        
+        estado = "espera";
+      }
+    }
+//    actualizar();
   }
 
   void mostrar() {
     //this.c = c;
     tint(200);
-      pincel.resize(pincel.width/2, pincel.height/2 );
-      image(pincel, random(width), random(height));
+    //pincel.resize( (pincel.width)/2, (pincel.height)/2 );
+    image(pincel, random(width), random(height));
   }
 }
 
