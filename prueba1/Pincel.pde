@@ -25,6 +25,7 @@ class Pincel
     yPos = int(random(height));
     //ubicacion en sprite
     int cual = int(random(cantidad));
+    println("cantidad"+cantidad);
     println(cual);
     int nuevoX = xp[ cual ];
     int nuevoY = yp[ cual ];
@@ -57,8 +58,8 @@ class Pincel
   void mostrar() {
     //this.c = c;
     tint(200);
-    //pincel.resize( (pincel.width)/2, (pincel.height)/2 );
-    image(pincel, random(width), random(height));
+    pincel.resize( 200, 170);
+    image(pincel, random(width), yPos);
   }
 }
 

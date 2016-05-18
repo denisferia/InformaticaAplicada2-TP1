@@ -49,6 +49,7 @@ void draw(){
   float valorAmplitud = gestorAmp.filtradoNorm();
   boolean estoyCantando = valorAmplitud > 0.2;
   
+  gestorAmp.imprimir( 100, 300 );
   
   for(int i=0; i< modulado.length; i++){
     //modulado[i].mostrar();
@@ -104,4 +105,4 @@ void keyPressed() {
     modulado1.mostrar(cualColor);
   }
   }
-}/*
+}*/
