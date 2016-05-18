@@ -14,6 +14,9 @@ class Pincel
     0, 340, 680
   };
   int cantidad =yp.length;
+
+  float tamanio;
+  int escala;
   /*****/
   String estado;
   
@@ -40,11 +43,13 @@ class Pincel
     estado = "espera";
   }
   //estado para ejecutar pinceles de acuerdo a la presencia de sonido
-  void actualizar( boolean estimulo ) {
+  void actualizar( boolean estimulo, float tamanioNorm ) {
     if ( estado.equals( "espera" )) {
       if ( estimulo ) {
         estado = "traza";
-        mostrar();
+        tamanio = tamanioNorm;
+        println("tamanio: "+tamanio);
+        mostrar(tamanio);
       }
     } else if ( estado.equals( "traza" )) {
       if ( !estimulo ) {
@@ -55,11 +60,14 @@ class Pincel
 //    actualizar();
   }
 
-  void mostrar() {
+  void mostrar(float tamanioNorm) {
     //this.c = c;
     tint(200);
-    pincel.resize( 200, 170);
-    image(pincel, random(width), yPos);
+    
+    escala = int(pincel.height * tamanioNorm);
+    println("escala: "+escala);
+    //pincel.resize( escala, escala);
+    image(pincel, random(width), yPos, escala, escala);
   }
 }
 

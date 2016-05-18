@@ -47,13 +47,13 @@ void draw(){
   gestorAmp.actualizar( inAmp );
   //transformo la intensidad de la voz en evento
   float valorAmplitud = gestorAmp.filtradoNorm();
-  boolean estoyCantando = valorAmplitud > 0.2;
+  boolean estoyCantando = valorAmplitud > 0.1;
   
   gestorAmp.imprimir( 100, 300 );
-  
+
   for(int i=0; i< modulado.length; i++){
     //modulado[i].mostrar();
-    modulado[i].actualizar( estoyCantando );
+    modulado[i].actualizar( estoyCantando, valorAmplitud );
     }
    
 
