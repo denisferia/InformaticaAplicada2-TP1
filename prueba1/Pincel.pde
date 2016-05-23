@@ -67,7 +67,7 @@ class Pincel
     escala = int(pincel.height * tamanioNorm);
     println("escala: "+escala);
     //pincel.resize( escala, escala);
-    image(pincel, random(width), yPos, escala, escala);
+    image(pincel, random(width), random(height), escala, escala);
   }
 }
 
