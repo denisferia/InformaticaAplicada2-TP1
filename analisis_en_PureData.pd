@@ -10,10 +10,10 @@
 #X obj 36 68 / 100;
 #X text 53 -22 Entrada de Audio;
 #X obj -12 290 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 6201 1;
 #X obj 9 337 pack 0 100;
 #X obj 39 40 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X obj 55 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X floatatom 60 115 5 0 0 0 - - -;
@@ -23,7 +23,6 @@
 #X msg 292 366 ];
 #X msg 259 112 connect localhost 12000;
 #X msg 276 141 disconnect;
-#X msg 340 328 send /datos \$1 \, send /vel \$2;
 #X obj 292 257 t b list b;
 #X obj 259 79 loadbang;
 #X floatatom 9 398 5 0 0 0 - - -;
@@ -33,7 +32,7 @@
 #X obj 47 205 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 174 11 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7000 1;
+-1 -1 0 1;
 #X floatatom 174 152 5 0 0 0 - - -;
 #X msg 196 41 70;
 #X obj 196 12 loadbang;
@@ -61,38 +60,39 @@
 #X obj 292 226 pack;
 #X obj 292 189 t b f;
 #X obj 150 338 pack 0 50;
+#X msg 340 328 send /datos \$1 \, send /vel \$2;
 #X connect 5 0 10 0;
 #X connect 5 0 11 0;
 #X connect 5 1 13 0;
-#X connect 5 3 36 0;
+#X connect 5 3 35 0;
 #X connect 6 0 7 0;
 #X connect 7 0 15 0;
-#X connect 7 0 33 0;
+#X connect 7 0 32 0;
 #X connect 8 0 7 1;
 #X connect 8 0 14 0;
-#X connect 11 0 25 0;
+#X connect 11 0 24 0;
 #X connect 12 0 8 0;
 #X connect 15 0 5 0;
 #X connect 17 0 16 0;
 #X connect 18 0 16 0;
 #X connect 19 0 16 0;
 #X connect 20 0 16 0;
-#X connect 21 0 16 0;
-#X connect 22 0 18 0;
-#X connect 22 1 21 0;
-#X connect 22 2 17 0;
-#X connect 23 0 19 0;
-#X connect 25 0 24 0;
-#X connect 25 0 34 0;
-#X connect 27 0 26 0;
-#X connect 27 0 35 0;
-#X connect 28 0 15 1;
-#X connect 29 0 30 0;
-#X connect 30 0 33 1;
-#X connect 31 0 29 0;
-#X connect 32 0 31 0;
-#X connect 33 0 28 0;
-#X connect 34 0 22 0;
-#X connect 35 0 34 0;
-#X connect 35 1 34 1;
-#X connect 36 0 27 0;
+#X connect 21 0 18 0;
+#X connect 21 1 36 0;
+#X connect 21 2 17 0;
+#X connect 22 0 19 0;
+#X connect 24 0 23 0;
+#X connect 24 0 33 0;
+#X connect 26 0 25 0;
+#X connect 26 0 34 0;
+#X connect 27 0 15 1;
+#X connect 28 0 29 0;
+#X connect 29 0 32 1;
+#X connect 30 0 28 0;
+#X connect 31 0 30 0;
+#X connect 32 0 27 0;
+#X connect 33 0 21 0;
+#X connect 34 0 33 0;
+#X connect 34 1 33 1;
+#X connect 35 0 26 0;
+#X connect 36 0 16 0;
